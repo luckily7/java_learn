@@ -8,7 +8,7 @@ public class Point {
     Point2 p2 = new Point2(15, 17);
 
 
-    System.out.println("Расстояние между точками (" + p1.x+";"+p1.y + ") и (" + p2.x+";"+p1.y + ")" + " = " + p1.distance(p2));
+    System.out.println("Расстояние между точками (" + p1.x+";"+p1.y + ") и (" + p2.x+";"+p2.y + ")" + " = " + p1.distance(p2));
   }
 
 }
