@@ -23,10 +23,6 @@ public class ContactCreationTests {
     wd.findElement(By.name("pass")).click();
     wd.findElement(By.name("pass")).clear();
     wd.findElement(By.name("pass")).sendKeys(password);
-    logout();
-  }
-
-  private void logout() {
     wd.findElement(By.xpath("//input[@value='Login']")).click();
   }
 
@@ -36,6 +32,10 @@ public class ContactCreationTests {
     fillContactForm(new ContactData("Ray", "Kruglov", "ul. Pechuchkina 56", "84957561234", "89265784212", "kruglovray@gmail.com"));
     submitContactCreation();
     gotoHomePage();
+    logout();
+  }
+
+  private void logout() {
     wd.findElement(By.linkText("Logout")).click();
   }
 
