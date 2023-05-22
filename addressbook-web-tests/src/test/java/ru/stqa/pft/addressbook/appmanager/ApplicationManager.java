@@ -61,7 +61,7 @@ public class ApplicationManager {
     wd.findElement(By.linkText("groups")).click();
   }
 
-  protected void stop() {
+  public void stop() {
     wd.quit();
   }
 
