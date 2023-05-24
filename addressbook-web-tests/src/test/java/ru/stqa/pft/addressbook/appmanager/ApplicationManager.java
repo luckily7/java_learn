@@ -26,6 +26,7 @@ public class ApplicationManager {
 
 
   public void stop() {
+    sessionHelper.logout();
     wd.quit();
   }
 
