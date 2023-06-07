@@ -3,14 +3,17 @@ package ru.stqa.pft.addressbook.model;
 public class ContactData {
   private final String firstname;
   private final String lastname;
+  private final String group;
   private final String address;
   private final String home;
   private final String mobile;
   private final String email;
 
-  public ContactData(String firstname, String lastname, String address, String home, String mobile, String email) {
+  public ContactData(String firstname, String lastname, String group, String address, String home, String mobile,
+                     String email) {
     this.firstname = firstname;
     this.lastname = lastname;
+    this.group = group;
     this.address = address;
     this.home = home;
     this.mobile = mobile;
@@ -39,5 +42,9 @@ public class ContactData {
 
   public String getEmail() {
     return email;
+  }
+
+  public String getGroup() {
+    return group;
   }
 }
