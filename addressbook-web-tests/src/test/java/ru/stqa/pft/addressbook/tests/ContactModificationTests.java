@@ -17,7 +17,7 @@ public class ContactModificationTests extends TestBase {
       app.getContactHelper().createContact(new ContactData("Ray",
               "Kruglov", "test1",
               "ul. Pechuchkina 56", "84957561234",
-              "89265784212", "kruglovray@gmail.com"), true);
+              "89265784212", "kruglovray@gmail.com"));
       app.getNavigationHelper().gotoHomePage();
     }
     app.getContactHelper().initContactModification();
@@ -37,7 +37,7 @@ public class ContactModificationTests extends TestBase {
       app.getContactHelper().createContact(new ContactData("Ray",
               "Kruglov", "test1",
               "ul. Pechuchkina 56", "84957561234",
-              "89265784212", "kruglovray@gmail.com"), true);
+              "89265784212", "kruglovray@gmail.com"));
       app.getNavigationHelper().gotoHomePage();
     }
     app.getContactHelper().initContactModification();
