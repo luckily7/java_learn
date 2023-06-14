@@ -1,4 +1,4 @@
-package ru.stqa.pft.sandbox;анга человек-бензопила 2
+package ru.stqa.pft.sandbox;
 
 public class Equality {
 
