@@ -15,7 +15,7 @@ public class ContactDeletionTests extends TestBase {
     app.getNavigationHelper().gotoHomePage();
     if (! app.getContactHelper().isThereAContact()) {
       app.getContactHelper().createContact(new ContactData("Ray",
-              "Kruglov", "test1",
+              "Kruglov",
               "ul. Pechuchkina 56", "84957561234",
               "89265784212", "kruglovray@gmail.com"));
     }
@@ -34,7 +34,7 @@ public class ContactDeletionTests extends TestBase {
     app.getNavigationHelper().gotoHomePage();
     if (! app.getContactHelper().isThereAContact()) {
       app.getContactHelper().createContact(new ContactData("Ray",
-              "Kruglov", "test1",
+              "Kruglov",
               "ul. Pechuchkina 56", "84957561234",
               "89265784212", "kruglovray@gmail.com"));
       app.getNavigationHelper().gotoHomePage();

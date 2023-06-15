@@ -15,13 +15,13 @@ public class ContactModificationTests extends TestBase {
     app.getNavigationHelper().gotoHomePage();
     if (! app.getContactHelper().isThereAContact()) {
       app.getContactHelper().createContact(new ContactData("Ray",
-              "Kruglov", "test1",
+              "Kruglov",
               "ul. Pechuchkina 56", "84957561234",
               "89265784212", "kruglovray@gmail.com"));
       app.getNavigationHelper().gotoHomePage();
     }
     app.getContactHelper().initContactModification();
-    app.getContactHelper().fillContactForm(new ContactData("Anton", "Kruglov", null, "ul. Pechuchkina 56", "84957561234", "89265784212", "kruglovray@gmail.com"), false);
+    app.getContactHelper().fillContactForm(new ContactData("Anton", "Kruglov", "ul. Pechuchkina 56", "84957561234", "89265784212", "kruglovray@gmail.com"), false);
     app.getContactHelper().submitContactModification();
     app.getNavigationHelper().gotoHomePage();
   }
@@ -35,13 +35,13 @@ public class ContactModificationTests extends TestBase {
     app.getNavigationHelper().gotoHomePage();
     if (! app.getContactHelper().isThereAContact()) {
       app.getContactHelper().createContact(new ContactData("Ray",
-              "Kruglov", "test1",
+              "Kruglov",
               "ul. Pechuchkina 56", "84957561234",
               "89265784212", "kruglovray@gmail.com"));
       app.getNavigationHelper().gotoHomePage();
     }
     app.getContactHelper().initContactModification();
-    app.getContactHelper().fillContactForm(new ContactData("Sergey", "Kruglov", null, "ul. Pechuchkina 56", "84957561234", "89265784212", "kruglovray@gmail.com"), false);
+    app.getContactHelper().fillContactForm(new ContactData("Sergey", "Kruglov", "ul. Pechuchkina 56", "84957561234", "89265784212", "kruglovray@gmail.com"), false);
     app.getContactHelper().submitContactModification1();
     app.getNavigationHelper().gotoHomePage();
   }

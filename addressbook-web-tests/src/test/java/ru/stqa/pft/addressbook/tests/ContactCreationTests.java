@@ -13,7 +13,7 @@ public class ContactCreationTests extends TestBase {
     if (! app.getGroupHelper().isThereAGroup()) {
       app.getGroupHelper().createGroup(new GroupData("test1", null, null));
     }
-    app.getContactHelper().createContact(new ContactData("Ray", "Kruglov", "test1",
+    app.getContactHelper().createContact(new ContactData("Ray", "Kruglov",
             "ul. Pechuchkina 56", "84957561234",
             "89265784212", "kruglovray@gmail.com"));
     app.getNavigationHelper().gotoHomePage();
