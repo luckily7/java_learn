@@ -1,4 +1,4 @@
-package ru.stqa.pft.addressbook.appmanager;
+package ru.stqa.pft.sandbox;
 
 import java.util.ArrayList;
 import java.util.Arrays;
