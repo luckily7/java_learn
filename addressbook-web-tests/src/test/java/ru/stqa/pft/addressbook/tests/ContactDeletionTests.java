@@ -13,20 +13,19 @@ public class ContactDeletionTests extends TestBase {
   @BeforeMethod
   public  void  ensurePreconditions () {
     app.goTo().groupPage();
-    if (! app.group().isThereAGroup()) {
+    if (app.group().list().size() == 0) {
       app.group().create(new GroupData().withName("test1"));
     }
     app.goTo().homePage();
     if (! app.contact().isThereAContact()) {
-      app.contact().create(new ContactData("Ray",
-              "Kruglov",
-              "ul. Pechuchkina 56", "84957561234",
-              "89265784212", "kruglovray@gmail.com"));
+      app.contact().create(new ContactData()
+              .withFirstname("Ray").withLastname("Kruglov").withAddress("ul. Pechuchkina 56")
+              .withHome( "84957561234").withMobile("89265784212").withEmail("kruglovray@gmail.com"));
     }
     app.goTo().homePage();
   }
 
-  @Test (enabled = false)
+  @Test
   public void TestContactDeletion () {
     List<ContactData> before = app.contact().list();
     int index = before.size() - 1;
