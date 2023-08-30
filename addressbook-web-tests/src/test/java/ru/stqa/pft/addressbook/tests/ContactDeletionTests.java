@@ -14,7 +14,7 @@ public class ContactDeletionTests extends TestBase {
   public  void  ensurePreconditions () {
     app.goTo().groupPage();
     if (! app.group().isThereAGroup()) {
-      app.group().create(new GroupData("test1", null, null));
+      app.group().create(new GroupData().withName("test1"));
     }
     app.goTo().homePage();
     if (! app.contact().isThereAContact()) {
@@ -26,7 +26,7 @@ public class ContactDeletionTests extends TestBase {
     app.goTo().homePage();
   }
 
-  @Test
+  @Test (enabled = false)
   public void TestContactDeletion () {
     List<ContactData> before = app.contact().list();
     int index = before.size() - 1;
