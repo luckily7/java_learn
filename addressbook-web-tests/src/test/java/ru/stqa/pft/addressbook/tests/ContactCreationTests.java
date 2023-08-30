@@ -10,14 +10,18 @@ import java.util.List;
 
 public class ContactCreationTests extends TestBase {
 
-
-  @Test (enabled = false)
-  public void testContactCreation() throws Exception {
+  @BeforeMethod
+  public  void  ensurePreconditions () {
     app.getNavigationHelper().gotoGroupPage();
     if (! app.getGroupHelper().isThereAGroup()) {
       app.getGroupHelper().createGroup(new GroupData("test1", null, null));
     }
     app.getNavigationHelper().gotoHomePage();
+  }
+
+
+  @Test 
+  public void testContactCreation() throws Exception {
     List<ContactData> before = app.getContactHelper().getContactList ();
     ContactData contact = new ContactData("Ray", "Kruglov",
             "ul. Pechuchkina 56", "84957561234",
