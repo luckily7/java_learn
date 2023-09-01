@@ -11,6 +11,8 @@ public class ContactData {
   private String mobile;
   private String email;
 
+  private String work;
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -59,6 +61,11 @@ public class ContactData {
     return this;
   }
 
+  public ContactData withWork(String work) {
+    this.work = work;
+    return this;
+  }
+
 
 
   public int getId() {return id;}
@@ -96,4 +103,7 @@ public class ContactData {
     return email;
   }
 
+  public String getWork() {
+    return  work;
+  }
 }
