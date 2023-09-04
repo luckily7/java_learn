@@ -32,6 +32,27 @@ public class ContactFormTests extends TestBase{
   }
 
   @Test
+  public void testContactPhones() {
+    ContactData contact = app.contact().all().iterator().next();
+    ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
+
+    MatcherAssert.assertThat(contact.getAllPhones(), equalTo(mergePhones(contactInfoFromEditForm)));
+  }
+
+  private String mergePhones(ContactData contact) {
+    return Arrays.asList(contact.getHome(), contact.getMobile(), contact.getWork())
+            .stream().filter((s) -> ! s.equals(""))
+            .map(ContactFormTests::cleaned)
+            .collect(Collectors.joining("\n"));
+  }
+
+  public static String cleaned(String phone) {
+    return  phone.replaceAll("\\s", "").replaceAll("[-()]", "");
+  }
+
+
+
+  @Test
   public void testContactAddress() {
     ContactData contact = app.contact().all().iterator().next();
     ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
