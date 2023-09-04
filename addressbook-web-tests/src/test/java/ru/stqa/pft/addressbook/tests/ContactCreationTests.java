@@ -50,7 +50,7 @@ public class ContactCreationTests extends TestBase {
 
   }
 
-  @Test 
+  @Test
   public void testBadContactCreation() throws Exception {
     Contacts before = app.contact().all();
     ContactData contact = new ContactData()
