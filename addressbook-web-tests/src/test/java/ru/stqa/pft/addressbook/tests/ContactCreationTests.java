@@ -8,6 +8,7 @@ import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.io.File;
 
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.junit.MatcherAssert.assertThat;
 
@@ -21,6 +22,7 @@ public class ContactCreationTests extends TestBase {
     }
     app.goTo().homePage();
   }
+
 
 
   @Test
