@@ -32,11 +32,18 @@ public class ContactFormTests extends TestBase{
   }
 
   @Test
-  public void testContactPhones() {
+  public void testContactForm() {
     ContactData contact = app.contact().all().iterator().next();
     ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
 
     MatcherAssert.assertThat(contact.getAllPhones(), equalTo(mergePhones(contactInfoFromEditForm)));
+    assertThat(contact.getAddress(), equalTo(contactInfoFromEditForm.getAddress()));
+    assertThat(contact.getAllEmails(), equalTo(mergeEmails(contactInfoFromEditForm)));
+  }
+
+  private String mergeEmails(ContactData contact) {
+    return Arrays.asList(contact.getEmail(),contact.getEmail2(),contact.getEmail3())
+            .stream().filter((s) -> !s.equals("")).collect(Collectors.joining("\n"));
   }
 
   private String mergePhones(ContactData contact) {
@@ -48,28 +55,5 @@ public class ContactFormTests extends TestBase{
 
   public static String cleaned(String phone) {
     return  phone.replaceAll("\\s", "").replaceAll("[-()]", "");
-  }
-
-
-
-  @Test
-  public void testContactAddress() {
-    ContactData contact = app.contact().all().iterator().next();
-    ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
-
-    assertThat(contact.getAddress(), equalTo(contactInfoFromEditForm.getAddress()));
-  }
-
-  @Test
-  public void testContactEmails(){
-    ContactData contact = app.contact().all().iterator().next();
-    ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
-
-    assertThat(contact.getAllEmails(), equalTo(mergeEmails(contactInfoFromEditForm)));
-  }
-
-  private String mergeEmails(ContactData contact) {
-    return Arrays.asList(contact.getEmail(),contact.getEmail2(),contact.getEmail3())
-            .stream().filter((s) -> !s.equals("")).collect(Collectors.joining("\n"));
   }
 }
