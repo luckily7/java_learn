@@ -1,0 +1,35 @@
+<list>
+  <contact>
+    <firstname>Foma 0</firstname>
+    <lastname>Kruglov 0</lastname>
+    <address>ul. Pechuchkina 56 0</address>
+    <home>8495756123</home>
+    <mobile>+79265784212</mobile>
+    <email>kruglovray@gmail.com</email>
+    <email2>krug@mail.ru</email2>
+    <email3>krug@ya.ru</email3>
+    <work>89265784212</work>
+  </contact>
+  <contact>
+    <firstname>Foma 1</firstname>
+    <lastname>Kruglov 1</lastname>
+    <address>ul. Pechuchkina 56 1</address>
+    <home>8495756123</home>
+    <mobile>+79265784212</mobile>
+    <email>kruglovray@gmail.com</email>
+    <email2>krug@mail.ru</email2>
+    <email3>krug@ya.ru</email3>
+    <work>89265784212</work>
+  </contact>
+  <contact>
+    <firstname>Foma 2</firstname>
+    <lastname>Kruglov 2</lastname>
+    <address>ul. Pechuchkina 56 2</address>
+    <home>8495756123</home>
+    <mobile>+79265784212</mobile>
+    <email>kruglovray@gmail.com</email>
+    <email2>krug@mail.ru</email2>
+    <email3>krug@ya.ru</email3>
+    <work>89265784212</work>
+  </contact>
+</list>
