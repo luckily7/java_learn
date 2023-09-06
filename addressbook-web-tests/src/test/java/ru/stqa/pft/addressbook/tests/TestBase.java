@@ -4,12 +4,10 @@ import org.openqa.selenium.remote.Browser;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import ru.stqa.pft.addressbook.appmanager.ApplicationManager;
-import sun.plugin2.util.BrowserType;
 
 public class TestBase {
 
-  protected static final ApplicationManager app
-          = new ApplicationManager(System.getProperty("browser", Browser.CHROME.browserName()));
+  protected static final ApplicationManager app = new ApplicationManager(Browser.CHROME.browserName());
 
   @BeforeSuite(alwaysRun = true)
   public void setUp() throws Exception {
