@@ -1,0 +1,35 @@
+[
+  {
+    "firstname": "Foma 0",
+    "lastname": "Kruglov 0",
+    "address": "ul. Pechuchkina 56 0",
+    "home": "8495756123",
+    "mobile": "+79265784212",
+    "email": "kruglovray@gmail.com",
+    "email2": "krug@mail.ru",
+    "email3": "krug@ya.ru",
+    "work": "89265784212"
+  },
+  {
+    "firstname": "Foma 1",
+    "lastname": "Kruglov 1",
+    "address": "ul. Pechuchkina 56 1",
+    "home": "8495756123",
+    "mobile": "+79265784212",
+    "email": "kruglovray@gmail.com",
+    "email2": "krug@mail.ru",
+    "email3": "krug@ya.ru",
+    "work": "89265784212"
+  },
+  {
+    "firstname": "Foma 2",
+    "lastname": "Kruglov 2",
+    "address": "ul. Pechuchkina 56 2",
+    "home": "8495756123",
+    "mobile": "+79265784212",
+    "email": "kruglovray@gmail.com",
+    "email2": "krug@mail.ru",
+    "email3": "krug@ya.ru",
+    "work": "89265784212"
+  }
+]
