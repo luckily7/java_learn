@@ -17,6 +17,19 @@ import java.util.Set;
 @Table(name = "addressbook")
 
 public class ContactData {
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactData that = (ContactData) o;
+    return id == that.id && Objects.equals(firstname, that.firstname) && Objects.equals(lastname, that.lastname) && Objects.equals(address, that.address) && Objects.equals(home, that.home) && Objects.equals(mobile, that.mobile) && Objects.equals(email, that.email) && Objects.equals(email2, that.email2) && Objects.equals(email3, that.email3) && Objects.equals(work, that.work) && Objects.equals(allPhones, that.allPhones) && Objects.equals(allEmails, that.allEmails) && Objects.equals(photo, that.photo) && Objects.equals(groups, that.groups);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, firstname, lastname, address, home, mobile, email, email2, email3, work, allPhones, allEmails, photo, groups);
+  }
+
   @Id
   @Column(name = "id")
   @XStreamOmitField
@@ -111,20 +124,6 @@ public class ContactData {
     return this;
   }
 
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    ContactData that = (ContactData) o;
-    return id == that.id && Objects.equals(firstname, that.firstname) && Objects.equals(lastname, that.lastname);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, firstname, lastname);
-  }
 
   public ContactData withId(int id) {
     this.id = id;

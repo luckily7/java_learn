@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.Groups;
 
 import java.util.HashSet;
@@ -145,4 +146,43 @@ public class ContactHelper extends HelperBase {
             .withLastname(lastname).withAddress(address).withHome(home)
             .withMobile(mobile).withWork(work).withEmail(email).withEmail2(email2).withEmail3(email3);
   }
+
+
+  public void addGroup(ContactData contact, GroupData group) {
+    selectContactById(contact.getId());
+    selectGroupForContact(group.getId());
+    confirmAddToGroup();
+    contactCache = null;
+  }
+
+
+  private void selectGroupForContact(int id) {
+    click(By.name("to_group"));
+    wd.findElement(By.name("to_group")).findElement(By.cssSelector(String.format("option[value='%s']", id))).click();
+  }
+
+  private void confirmAddToGroup() {
+    click(By.name("add"));
+  }
+
+  public void removeContactFromGroup(GroupData group, ContactData contact) {
+    selectGroup(group.getId());
+    selectContactById(contact.getId());
+    removeGroup();
+    contactCache = null;
+  }
+
+
+  private void selectGroup(int id) {
+    click(By.name("group"));
+    wd.findElement(By.name("group")).findElement(By.cssSelector(String.format("option[value='%s']", id))).click();
+  }
+
+  private void removeGroup() {
+    click(By.name("remove"));
+  }
+
+
+
+//app.goTo().homePage();
 }
