@@ -25,7 +25,7 @@ public class ContactAddToGroupTests  extends TestBase {
             .withHome("84957561234").withMobile("89265784212")
             .withEmail("kruglovray@gmail.com").withWork("9123434"));
     app.goTo().homePage();
-    
+
     Contacts contacts = app.db().contacts();
     Groups groups = app.db().groups();
     int contactFullSize = 0;
