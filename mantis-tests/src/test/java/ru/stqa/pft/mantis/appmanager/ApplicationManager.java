@@ -8,9 +8,10 @@ import org.openqa.selenium.remote.Browser;
 
 import java.io.File;
 import java.io.FileReader;
+import java.time.Duration;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.regex.MatchResult;
+
 
 public class ApplicationManager {
   private final String browser;
@@ -19,6 +20,11 @@ public class ApplicationManager {
   private RegistrationHelper registrationHelper;
   private FtpHelper ftp;
   private MailHelper mailHelper;
+  private JamesHelper jamesHelper;
+
+  private DbHelper dbHelper;
+  private AdminHelper adminHelper;
+  private SessionHelper session;
 
 
   public ApplicationManager(String browser) {
@@ -29,6 +35,7 @@ public class ApplicationManager {
   public void init() throws IOException {
     String target = System.getProperty("target", "local");
     properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
+    dbHelper = new DbHelper();
   }
 
   public FtpHelper ftp() {
@@ -70,6 +77,7 @@ public class ApplicationManager {
         wd = new InternetExplorerDriver();
       }
       //wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+      wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
       wd.get(properties.getProperty("web.baseUrl"));
     }
     return wd;
@@ -80,5 +88,30 @@ public class ApplicationManager {
       mailHelper = new MailHelper(this);
     }
     return mailHelper;
+  }
+
+  public JamesHelper james (){
+    if (jamesHelper == null){
+      jamesHelper = new JamesHelper(this);
+    }
+    return jamesHelper;
+  }
+
+  public DbHelper db() {
+    return dbHelper;
+  }
+
+  public SessionHelper session(){
+    if (session == null) {
+      session = new SessionHelper(this);
+    }
+    return session;
+  }
+
+  public AdminHelper admin() {
+    if (adminHelper == null) {
+      adminHelper = new AdminHelper(this);
+    }
+    return adminHelper;
   }
 }

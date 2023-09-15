@@ -14,8 +14,18 @@ dependencies {
     implementation 'commons-net:commons-net:3.9.0'
     implementation 'org.subethamail:subethasmtp:3.1.7'
     implementation 'ru.lanwen.verbalregex:java-verbal-expressions:1.8'
+
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.5'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.30'
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.6.12.Final'
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+tasks.withType(Test) {
+    systemProperty "file.encoding", "UTF-8"
+}
 
 test {
     useTestNG {
@@ -28,7 +38,7 @@ test {
         systemProperty 'target', "${target}"
     }
     if (project.hasProperty('verifyUI')) {
-        systemProperty 'verifyUI', "${verifyUI}"
+        systemProperty 'verifyUI', "${target}"
     }
 }
 
